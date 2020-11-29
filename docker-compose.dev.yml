@@ -1,0 +1,33 @@
+version: "3.5"
+
+services:
+  postgres_btre:
+    container_name: postgres_btre
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_btre:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  pgadmin_btre:
+    container_name: pgadmin_btre
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres_btre
+    environment:
+      PGADMIN_DEFAULT_EMAIL: satheeshkmr955@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin_btre:/root/.pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+
+volumes:
+  postgres_btre:
+  pgadmin_btre:
