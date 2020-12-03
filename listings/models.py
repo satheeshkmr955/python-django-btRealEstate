@@ -13,6 +13,7 @@ class Listing(models.Model):
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=20)
     description = models.TextField(blank=True)
+    lot_size = models.FloatField(default=1)
     price = models.IntegerField()
     bedrooms = models.IntegerField()
     bathrooms = models.DecimalField(max_digits=5, decimal_places=1)
