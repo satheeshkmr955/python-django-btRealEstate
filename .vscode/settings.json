@@ -1,7 +1,7 @@
 {
-  "python.pythonPath": "venv\\Scripts\\python.exe",
+  "python.pythonPath": "venv/bin/python",
   "git.ignoreLimitWarning": true,
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "python.languageServer": "Pylance",
   "editor.codeActionsOnSave": null,
   "python.linting.pylintArgs": ["--load-plugins=pylint_django"]
